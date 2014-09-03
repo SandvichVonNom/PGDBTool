@@ -143,6 +143,9 @@ class MainWindow(QtGui.QMainWindow, form_class):
             if "password authentication failed" in child.before:
                 self.update_status("ERROR: Authentication failed")
                 return "failed"
+            elif "not exist" in child.before:
+                self.update_status("ERROR: Source database does not exist")
+                return "failed"
             else:
                 self.update_status("SUCCESS.  Database saved to sql file")
                 return "success"

@@ -1,11 +1,2 @@
 localhost
-llllllllllll
-test
-ttt
-ko
-ooo
-tu
-rawr
-1
-iop
-res
+127.0.0.1

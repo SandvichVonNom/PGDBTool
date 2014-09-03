@@ -83,7 +83,7 @@ p, li { white-space: pre-wrap; }
                   <item>
                    <widget class="QLineEdit" name="Copy_Line_SrcAcc">
                     <property name="text">
-                     <string>jscheel</string>
+                     <string/>
                     </property>
                    </widget>
                   </item>
@@ -104,7 +104,7 @@ p, li { white-space: pre-wrap; }
                      <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText</set>
                     </property>
                     <property name="text">
-                     <string>animal79</string>
+                     <string/>
                     </property>
                     <property name="echoMode">
                      <enum>QLineEdit::Password</enum>
@@ -150,7 +150,7 @@ p, li { white-space: pre-wrap; }
                   <item>
                    <widget class="QLineEdit" name="Copy_Line_DestAcc">
                     <property name="text">
-                     <string>jscheel</string>
+                     <string/>
                     </property>
                    </widget>
                   </item>
@@ -168,7 +168,7 @@ p, li { white-space: pre-wrap; }
                   <item>
                    <widget class="QLineEdit" name="Copy_Line_DestPass">
                     <property name="text">
-                     <string>1234</string>
+                     <string/>
                     </property>
                     <property name="echoMode">
                      <enum>QLineEdit::Password</enum>
@@ -199,7 +199,7 @@ p, li { white-space: pre-wrap; }
                 <item>
                  <widget class="QLineEdit" name="Copy_Line_SrcDB">
                   <property name="text">
-                   <string>db1</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -217,7 +217,7 @@ p, li { white-space: pre-wrap; }
                 <item>
                  <widget class="QLineEdit" name="Copy_Line_DestDB">
                   <property name="text">
-                   <string>db1</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -300,7 +300,7 @@ p, li { white-space: pre-wrap; }
                   <item>
                    <widget class="QLineEdit" name="Backup_Line_SrcAcc">
                     <property name="text">
-                     <string>jscheel</string>
+                     <string/>
                     </property>
                    </widget>
                   </item>
@@ -321,7 +321,7 @@ p, li { white-space: pre-wrap; }
                      <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText</set>
                     </property>
                     <property name="text">
-                     <string>animal79</string>
+                     <string/>
                     </property>
                     <property name="echoMode">
                      <enum>QLineEdit::Password</enum>
@@ -352,7 +352,7 @@ p, li { white-space: pre-wrap; }
                 <item>
                  <widget class="QLineEdit" name="Backup_Line_SrcDB">
                   <property name="text">
-                   <string>db1</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -432,7 +432,7 @@ p, li { white-space: pre-wrap; }
               <item>
                <widget class="QLineEdit" name="Restore_Line_DestAcc">
                 <property name="text">
-                 <string>jscheel</string>
+                 <string/>
                 </property>
                </widget>
               </item>
@@ -450,7 +450,7 @@ p, li { white-space: pre-wrap; }
               <item>
                <widget class="QLineEdit" name="Restore_Line_DestPass">
                 <property name="text">
-                 <string>1234</string>
+                 <string/>
                 </property>
                 <property name="echoMode">
                  <enum>QLineEdit::Password</enum>
@@ -473,7 +473,7 @@ p, li { white-space: pre-wrap; }
             <item>
              <widget class="QLineEdit" name="Restore_Line_DestDB">
               <property name="text">
-               <string>db1</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -482,7 +482,7 @@ p, li { white-space: pre-wrap; }
           <item>
            <widget class="QPushButton" name="Restore_Btn_RunRestore">
             <property name="text">
-             <string>Start Transfer</string>
+             <string>Start Restore</string>
             </property>
            </widget>
           </item>
@@ -522,6 +522,38 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>Copy_list_Src</tabstop>
+  <tabstop>Copy_list_Dest</tabstop>
+  <tabstop>Copy_Btn_ServerAdd</tabstop>
+  <tabstop>Copy_Line_ServerAdd</tabstop>
+  <tabstop>Copy_Line_SrcAcc</tabstop>
+  <tabstop>Copy_Line_SrcPass</tabstop>
+  <tabstop>Copy_Line_DestAcc</tabstop>
+  <tabstop>Copy_Line_DestPass</tabstop>
+  <tabstop>Copy_Line_SrcDB</tabstop>
+  <tabstop>Copy_Check_DBSameName</tabstop>
+  <tabstop>Copy_Line_DestDB</tabstop>
+  <tabstop>Copy_Btn_RunCopy</tabstop>
+  <tabstop>Backup_list_Src</tabstop>
+  <tabstop>Backup_Btn_ServerAdd</tabstop>
+  <tabstop>Backup_Line_ServerAdd</tabstop>
+  <tabstop>Backup_Line_SrcAcc</tabstop>
+  <tabstop>Backup_Line_SrcPass</tabstop>
+  <tabstop>Backup_Line_SrcDB</tabstop>
+  <tabstop>Backup_Btn_RunBackup</tabstop>
+  <tabstop>Restore_Btn_File</tabstop>
+  <tabstop>Restore_Line_File</tabstop>
+  <tabstop>Restore_list_Dest</tabstop>
+  <tabstop>Restore_Btn_ServerAdd</tabstop>
+  <tabstop>Restore_Line_ServerAdd</tabstop>
+  <tabstop>Restore_Line_DestAcc</tabstop>
+  <tabstop>Restore_Line_DestPass</tabstop>
+  <tabstop>Restore_Line_DestDB</tabstop>
+  <tabstop>Restore_Btn_RunRestore</tabstop>
+  <tabstop>Txt_Status</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
