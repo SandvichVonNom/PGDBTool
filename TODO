@@ -1,2 +1,3 @@
 How do very large (IE O3) databases work, are the timeouts too short for the auth defs?
 How does the program respond to having a .pgpass set?
+PExpect does not work on Windows (oops), need to explore a different method (idea is to create a temporary access restricted .pgpass file).

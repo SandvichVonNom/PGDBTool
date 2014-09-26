@@ -31,7 +31,7 @@ def server_file_to_array():
 server_list_array = server_file_to_array()
 
 class MainWindow(QtGui.QMainWindow, form_class):
-    # Initialize t\he main window
+    # Initialize the main window
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
         self.setupUi(self)
@@ -63,7 +63,7 @@ class MainWindow(QtGui.QMainWindow, form_class):
     def update_status(self, var):
         self.Txt_Status.append(str(var))
         self.Txt_Status.repaint()
-        time.sleep(.5)
+        time.sleep(5)
 
     def get_time(self):
         ts = time.time()
@@ -132,14 +132,14 @@ class MainWindow(QtGui.QMainWindow, form_class):
     def auth_dump(self, child, pw):
         try:
             self.update_status("Initiating connection with host")
-            child.expect('Password:', timeout=7)
+            child.expect('Password:', timeout=1000)
             child.sendline(pw + "\n")
         except:
             self.update_status("ERROR: Could not connect to host.")
             return "failed"
         try:
-            child.expect (['%',pexpect.EOF])
-            print child.before
+            child.expect (['%',pexpect.EOF],  timeout=1000)
+            self.update_status(child.before)
             if "password authentication failed" in child.before:
                 self.update_status("ERROR: Authentication failed")
                 return "failed"
@@ -157,13 +157,13 @@ class MainWindow(QtGui.QMainWindow, form_class):
     def auth_create(self, child, pw):
         try:
             self.update_status("Initiating connection with host")
-            child.expect("Password", timeout=7)
+            child.expect("Password", timeout=1000)
             child.sendline(pw + "\n")
         except:
             self.update_status("ERROR: Could not connect to host.")
             return "failed"
         try:
-            child.expect (['%',pexpect.EOF])                                     
+            child.expect (['%',pexpect.EOF],  timeout=1000)                                     
             if "Password" in child.before:
                 self.update_status("ERROR: Authentication failed")
                 return "failed"
@@ -180,13 +180,13 @@ class MainWindow(QtGui.QMainWindow, form_class):
     def auth_pop(self, child, pw):
         try:
             self.update_status("Initiating connection with host")
-            child.expect("[Pp]assword", timeout=7)
+            child.expect("[Pp]assword", timeout=1000)
             child.sendline(pw + "\n")
         except:
             self.update_status("ERROR: Could not connect to host.")
             return "failed"
         try:
-            child.expect (['%',pexpect.EOF])                                     
+            child.expect (['%',pexpect.EOF],  timeout=1000)                                     
             if "Password" in child.before:
                 self.update_status("ERROR: Authentication failed")
                 return "failed"
@@ -308,10 +308,10 @@ class MainWindow(QtGui.QMainWindow, form_class):
         dump_cmd = self.get_dump_cmd(src_host, src_acc, backupfile, src_db)
         childdump = pexpect.spawn(dump_cmd)
         result_dump = self.auth_dump(childdump, src_pass)
-        self.update_status("Backup created at: \n" + backupfile)
         if result_dump == "failed":
             self.update_status("Copy halted")
             return
+        self.update_status("Backup created at: \n" + backupfile)
         self.update_status("BACKUP PROCESS FINISHED")
         
     def RestoreDB(self):
